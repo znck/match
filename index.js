@@ -12,6 +12,8 @@ module.exports = function match(pattern, url) {
     exec(url) {
       const matches = re.exec(url)
 
+      if (!Array.isArray(matches)) return {}
+
       return matches.slice(1).reduce((params, match, i) => ({ ...params, [keys[i].name]: match }), {})
     }
   }

@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: znck/pnpm
+
+    branches:
+      ignore:
+        - gh-pages # list of branches to ignore
+        - /release\/.*/ # or ignore regexes
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
+
+      - run: pnpm install --ignore-scripts
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
+
+      # - run:
+      #     name: check code style
+      #     command: npm run lint
+
+      - run:
+          name: test
+          command: npm run test:cov
+
+      - run:
+          name: upload coverage
+          command: bash <(curl -s https://codecov.io/bash)

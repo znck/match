@@ -1,6 +1,6 @@
 {
   "name": "@znck/match",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tiny router for microservices",
   "repository": {
     "url": "znck/@znck/match",

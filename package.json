@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Tiny router for microservices",
   "repository": {
-    "url": "znck/@znck/match",
+    "url": "https://github.com/znck/match",
     "type": "git"
   },
   "main": "index.js",

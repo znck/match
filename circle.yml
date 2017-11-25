@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:latest
+      - image: pnpm:latest
 
     branches:
       ignore:
@@ -15,20 +15,19 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
-          # fallback to using the latest cache if no exact match is found
           - v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
 
-      - run: npm install
+      - run: pnpm install
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          key: v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
 
       - run:
           name: test
-          command: npm run lint && npm run test:cov
+          command: pnpm run lint && pnpm run test:cov
+
       - run:
           name: upload coverage
           command: bash <(curl -s https://codecov.io/bash)

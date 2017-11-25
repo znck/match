@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "test:cov": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov",
-    "test": "ava *.spec.js",
+    "test": "ava **/*.spec.js",
     "lint": "xo"
   },
   "author": "znck <hi@znck.me>",

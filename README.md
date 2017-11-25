@@ -8,8 +8,8 @@
 <!-- [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/) -->
 [![NPM version](https://img.shields.io/npm/v/@znck/match.svg?style=flat)](https://npmjs.com/package/@znck/match)
 [![NPM downloads](https://img.shields.io/npm/dm/@znck/match.svg?style=flat)](https://npmjs.com/package/@znck/match)
-[![CircleCI](https://circleci.com/gh/znck/@znck/match/tree/master.svg?style=shield)](https://circleci.com/gh/znck/@znck/match/tree/master)
-[![codecov](https://codecov.io/gh/znck/@znck/match/branch/master/graph/badge.svg)](https://codecov.io/gh/znck/@znck/match)
+[![CircleCI](https://circleci.com/gh/znck/match/tree/master.svg?style=shield)](https://circleci.com/gh/znck/match/tree/master)
+[![codecov](https://codecov.io/gh/znck/match/branch/master/graph/badge.svg)](https://codecov.io/gh/znck/match)
 
 </div>
 

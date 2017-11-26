@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: znck/pnpm
+      - image: node
 
     branches:
       ignore:
@@ -14,19 +14,14 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
+          - v1-dependencies-{{ checksum "package-lock.json" }}
 
-      - run: pnpm install --ignore-scripts
+      - run: npm install --ignore-scripts
 
       - save_cache:
           paths:
             - node_modules
-            - /root/.pnpm-store
-          key: v1-dependencies-{{ checksum "shrinkwrap.yaml" }}
-
-      # - run:
-      #     name: check code style
-      #     command: npm run lint
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
 
       - run:
           name: test
